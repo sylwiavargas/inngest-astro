@@ -10,5 +10,5 @@ export async function GET() {
     },
   });
 
-  return { name: "Hello Houston from Astro!" };
+  return Response.json({ name: "Hello Houston from Inngest!" });
 }

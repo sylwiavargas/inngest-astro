@@ -44,10 +44,25 @@ import Card from "../components/Card.astro";
     </p>
     <ul role="list" class="link-card-grid">
       <Card
-        href="http://localhost:3000/api/helloAstro"
+        href="/api/helloAstro"
         title="1. Press this button"
         body="It will trigger an Inngest function."
       />
+      <button class="send">Click me!</button>
+
+      <script>
+        const button = document.querySelector("button.send");
+        button?.addEventListener("click", async () => {
+          const response = await fetch("/api/helloAstro");
+          if (response.ok) {
+            alert(
+              "Awesome! Check the Inngest Dev Server now at localhost:8282"
+            );
+          } else {
+            alert("Something went wrong");
+          }
+        });
+      </script>
       <Card
         href="http://localhost:8282"
         title="2. Visit Inngest Dev Server UI"
