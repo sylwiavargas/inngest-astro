@@ -4,6 +4,7 @@ type DemoEventSent = {
   name: "demo/hello.world";
   data: {
     message: string;
+    email?: string;
   };
 };
 
